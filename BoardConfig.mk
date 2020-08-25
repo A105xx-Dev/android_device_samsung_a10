@@ -146,11 +146,9 @@ BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 # SELinux
 BOARD_SEPOLICY_VERS := 29.0
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 include device/havoc/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-SELINUX_IGNORE_NEVERALLOWS := true
 
 # System-as-root
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
@@ -160,10 +158,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Vendor Security Patch
 VENDOR_SECURITY_PATCH := 2020-06-01
-
-# Lineage hardware
-BOARD_HARDWARE_CLASS := \
-    hardware/samsung/lineagehw
 
 WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
