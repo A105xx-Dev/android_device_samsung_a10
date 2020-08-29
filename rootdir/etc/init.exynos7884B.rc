@@ -147,6 +147,9 @@ on post-fs-data
     chown system system /sys/class/mdnie/mdnie/light_notification
     chown system system /sys/class/mdnie/mdnie/color_lens
 
+# Permissions for SmartCharging
+    chown system system /sys/class/power_supply/battery/batt_slate_mode
+
 # Permissions Camera
     mkdir /data/vendor/camera 0770 cameraserver system
     chown cameraserver cameraserver /sys/kernel/mm/vmscan/mem_boost_mode
@@ -180,7 +183,7 @@ on post-fs-data
     chown cameraserver cameraserver /sys/class/camera/front/front_otp_dpc
     chown system radio /sys/class/camera/rear/supported_cameraIds
 
-    ## Rear2 camera permission
+# Rear2 camera permission
     chown system radio /sys/class/camera/rear/rear2_camfw
     chown system radio /sys/class/camera/rear/rear2_camfw_full
     chown system radio /sys/class/camera/rear/rear2_checkfw_user
